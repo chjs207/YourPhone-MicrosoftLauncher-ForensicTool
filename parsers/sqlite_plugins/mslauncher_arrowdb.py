@@ -49,7 +49,7 @@ class MSLauncherArrowFrequencyPlugin(interface.SQLitePlugin):
         event = time_events.DateTimeValuesEvent(datetime, definitions.TIME_DESCRIPTION_UNKNOWN)
         parser_mediator.ProduceEventWithEventData(event, event_data)
 
-class MSLauncherArrowReminderFoldersEventData():
+class MSLauncherArrowReminderFoldersEventData(events.EventData):
     """MSLauncher Arrow Reminders Event data.
     """
     DATA_TYPE = 'mslauncher:event:arrow_reminderfolders'
@@ -83,7 +83,7 @@ class MSLauncherArrowReminderFoldersPlugin(interface.SQLitePlugin):
         event = time_events.DateTimeValuesEvent(datetime, definitions.TIME_DESCRIPTION_UNKNOWN)
         parser_mediator.ProduceEventWithEventData(event, event_data)
 
-class MSLauncherArrowRemindersEventData():
+class MSLauncherArrowRemindersEventData(events.EventData):
     """MSLauncher Arrow Reminders Event data.
     """
     DATA_TYPE = 'mslauncher:event:arrow_reminders'
