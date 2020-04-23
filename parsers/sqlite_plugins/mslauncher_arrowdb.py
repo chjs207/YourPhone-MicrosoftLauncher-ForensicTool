@@ -76,7 +76,7 @@ class MSLauncherArrowReminderFoldersPlugin(interface.SQLitePlugin):
 
         query_hash = hash(query)
 
-        event_data = MSLauncherArrowFrequencyEventData()
+        event_data = MSLauncherArrowReminderFoldersEventData()
         event_data.name = self._GetRowValue(query_hash, row, 'name')
         event_data.create_time = self._GetRowValue(query_hash, row, 'createTime')
         datetime = dfdatetime_posix.PosixTime(timestamp=0)
@@ -114,7 +114,7 @@ class MSLauncherArrowRemindersPlugin(interface.SQLitePlugin):
 
         query_hash = hash(query)
 
-        event_data = MSLauncherArrowFrequencyEventData()
+        event_data = MSLauncherArrowRemindersEventData()
         event_data.title = self._GetRowValue(query_hash, row, 'title')
         event_data.create_time = self._GetRowValue(query_hash, row, 'createTime')
         event_data.uuid = self._GetRowValue(query_hash, row, 'uuid')
