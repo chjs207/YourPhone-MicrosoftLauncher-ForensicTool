@@ -4,7 +4,7 @@
 
 from __future__ import unicode_literals
 
-from dfdatetime import posix_time as dfdatetime_posix
+from dfdatetime import java_time as dfdatetime_java
 
 from plaso.containers import events
 from plaso.containers import time_events
@@ -47,10 +47,10 @@ class MSLauncherNotesPlugin(interface.SQLitePlugin):
 
         event_data = MSLauncherNotesEventData()
         localCreatedAt = self._GetRowValue(query_hash, row, 'localCreatedAt')
-        conv_localCreatedAt = dfdatetime_posix.PosixTime(timestamp=localCreatedAt)
+        conv_localCreatedAt = dfdatetime_java.JavaTime(timestamp=localCreatedAt)
         event_data.local_created_at = conv_localCreatedAt.CopyToDateTimeString()
         documentModifiedAt = self._GetRowValue(query_hash, row, 'documentModifiedAt')
-        conv_documentModifiedAt = dfdatetime_posix.PosixTime(timestamp=documentModifiedAt)
+        conv_documentModifiedAt = dfdatetime_java.JavaTime(timestamp=documentModifiedAt)
         event_data.document_modified_at = conv_documentModifiedAt.CopyToDateTimeString()
         event_data.remoteData = self._GetRowValue(query_hash, row, 'remoteData')
         event_data.document = self._GetRowValue(query_hash, row, 'document')
