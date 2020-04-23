@@ -4,7 +4,7 @@ YourPhone-MicrosoftLauncher-ForensicTool is Plaso Parser plugin
 This tool can analyze digital forensic artifacts of Your Phone and Microsoft Launcher. 
 
 ### Your Phone plugin
-sqlite/yourphone_calls
+sqlite/yourphone_calls\\
 sqlite/yourphone_contacts
 sqlite/yourphone_devicedata
 sqlite/yourphone_message
