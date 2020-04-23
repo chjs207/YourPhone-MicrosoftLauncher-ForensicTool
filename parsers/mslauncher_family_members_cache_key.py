@@ -73,8 +73,9 @@ class MSLauncherFamilyMembersCacheKeyParser(interface.FileObjectParser):
                         continue
                 else:
                     continue
+            date_time = dfdatetime_posix_time.PosixTime(timestamp=0)
             event = time_events.DateTimeValuesEvent(
-                None, definitions.TIME_DESCRIPTION_UNKNOWN)
+                date_time, definitions.TIME_DESCRIPTION_UNKNOWN)
             parser_mediator.ProduceEventWithEventData(event, event_data)
 
 manager.ParsersManager.RegisterParser(MSLauncherFamilyMembersCacheKeyParser)
