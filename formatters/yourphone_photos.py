@@ -15,7 +15,7 @@ class YourPhonePhotosEventFormatter(interface.ConditionalEventFormatter):
   FORMAT_STRING_PIECES = [
       'Name: {name}',
       'Last Updated Time: {last_updated_time}',
-      'Sync Time: {taken_time}',
+      'Taken Time: {taken_time}',
       'Size: {size}',
       'URI: {uri}',
       'Thumbnail: {thumbnail}',
