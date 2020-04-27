@@ -77,7 +77,7 @@ class YourPhonePhotosPlugin(interface.SQLitePlugin):
         event_data.last_updated_time = conv_last_updated_time.CopyToDateTimeString()
         event_data.taken_time = conv_taken_time.CopyToDateTimeString()
 
-        event = time_events.DateTimeValuesEvent(conv_taken_time, 'Sync Time')
+        event = time_events.DateTimeValuesEvent(conv_taken_time, 'Taken Time')
         parser_mediator.ProduceEventWithEventData(event, event_data)
         event = time_events.DateTimeValuesEvent(conv_last_updated_time, 'Last updated Time')
         parser_mediator.ProduceEventWithEventData(event, event_data)
@@ -115,7 +115,7 @@ class YourPhonePhotosPlugin(interface.SQLitePlugin):
         event = time_events.DateTimeValuesEvent(conv_last_updated_time, 'Last updated Time')
         parser_mediator.ProduceEventWithEventData(event, event_data)
 
-        event = time_events.DateTimeValuesEvent(conv_taken_time, 'Sync Time')
+        event = time_events.DateTimeValuesEvent(conv_taken_time, 'Taken Time')
         parser_mediator.ProduceEventWithEventData(event, event_data)
 
 sqlite.SQLiteParser.RegisterPlugin(YourPhonePhotosPlugin)
