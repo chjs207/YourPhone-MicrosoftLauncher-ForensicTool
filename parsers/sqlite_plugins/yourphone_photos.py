@@ -58,9 +58,15 @@ class YourPhonePhotosPlugin(interface.SQLitePlugin):
         event_data.size = self._GetRowValue(query_hash, row, 'size')
         event_data.uri = self._GetRowValue(query_hash, row, 'uri')
         thumbnail = self._GetRowValue(query_hash, row, 'thumbnail')
-        event_data.thumbnail = binascii.b2a_hex(thumbnail)
+        if thumbnail == None:
+            event_data.thumbnail = None
+        else:
+            event_data.thumbnail = binascii.b2a_hex(thumbnail)
         media = self._GetRowValue(query_hash, row, 'media')
-        event_data.media = binascii.b2a_hex(media)
+        if media == None:
+            event_data.media = None
+        else:
+            event_data.media = binascii.b2a_hex(media)
 
         last_updated_time = self._GetRowValue(query_hash, row, 'last_updated_time')
         conv_last_updated_time = dfdatetime_filetime.Filetime(timestamp=last_updated_time)
@@ -73,7 +79,7 @@ class YourPhonePhotosPlugin(interface.SQLitePlugin):
 
         event = time_events.DateTimeValuesEvent(conv_taken_time, 'Sync Time')
         parser_mediator.ProduceEventWithEventData(event, event_data)
-        event = time_events.DataTimeValuesEvent(conv_last_updated_time, 'Last updated Time')
+        event = time_events.DateTimeValuesEvent(conv_last_updated_time, 'Last updated Time')
         parser_mediator.ProduceEventWithEventData(event, event_data)
 
     def ParsePhotoRow(self, parser_mediator, query, row, **unused_kwargs):
@@ -86,9 +92,16 @@ class YourPhonePhotosPlugin(interface.SQLitePlugin):
         event_data.size = self._GetRowValue(query_hash, row, 'size')
         event_data.uri = self._GetRowValue(query_hash, row, 'uri')
         thumbnail = self._GetRowValue(query_hash, row, 'thumbnail')
-        event_data.thumbnail = binascii.b2a_hex(thumbnail)
+        
+        if thumbnail == None:
+            event_data.thumbnail = None
+        else:
+            event_data.thumbnail = binascii.b2a_hex(thumbnail)
         media = self._GetRowValue(query_hash, row, 'media')
-        event_data.media = binascii.b2a_hex(media)
+        if media == None:
+            event_data.media = None
+        else:
+            event_data.media = binascii.b2a_hex(media)
 
         last_updated_time = self._GetRowValue(query_hash, row, 'last_updated_time')
         conv_last_updated_time = dfdatetime_filetime.Filetime(timestamp=last_updated_time)
