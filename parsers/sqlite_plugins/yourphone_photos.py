@@ -38,7 +38,7 @@ class YourPhonePhotosPlugin(interface.SQLitePlugin):
     NAME = 'yourphone_photos'
     DESCRIPTION = 'Parser for YourPhone photos SQLite database files.'
 
-    REQUIRED_TABLES = frozenset(['media', 'photos'])
+    REQUIRED_TABLES = frozenset(['media', 'photo'])
 
     # Define the needed queris.
     QUERIES = [
